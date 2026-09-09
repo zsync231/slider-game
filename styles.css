@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+}
+
+body {
+    user-select: none;
+    font-family: "Kristen ITC";
+    background-color: #000000;
+    overflow: hidden;
+}
+
+#grid, #grid tr, #grid td {
+    border: 2px #00000000 solid;
+    border-collapse: collapse;
+}
+
+#grid {
+    width: 1070px;
+    height: 1070px;
+    position: absolute;
+    left: 425px;
+    top: 5px;
+    table-layout: fixed;
+    visibility: hidden;
+}
+
+#grid td {
+    text-align: center;
+    font-size: 120px;
+    overflow: hidden;
+}
+
+#timerDisplay {
+    font-size: 75px;
+    width: 415px;
+    height: 84px;
+    background-color: #202020;
+    color: #00ff00;
+    position: absolute;
+    top: 9px;
+    left: 6px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clockDisplay {
+    font-size: 75px;
+    width: 415px;
+    height: 84px;
+    background-color: #202020;
+    color: #ffffff;
+    position: absolute;
+    bottom: 9px;
+    left: 6px;
+    text-align: center;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dateDisplay {
+    font-size: 70px;
+    width: 415px;
+    height: 84px;
+    background-color: #202020;
+    color: #ffffff;
+    position: absolute;
+    bottom: 120px;
+    left: 6px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#percentageDisplay {
+    font-size: 75px;
+    width: 415px;
+    background-color: #202020;
+    color: #ffffff;
+    position: absolute;
+    bottom: 9px;
+    right: 6px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+#movesDisplay {
+    font-size: 75px;
+    width: 415px;
+    height: 84px;
+    background-color: #202020;
+    color: #ffffff;
+    position: absolute;
+    top: 9px;
+    right: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+.pausedScreen {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #000000a0;
+    visibility: visible;
+    color: #ffffff;
+    visibility: hidden;
+}
+
+#pausedText {
+    text-align: center;
+    font-size: 150px;
+    position: relative;
+    bottom: -36vh;
+}
+
+#pausedSubtitle {
+    text-align: center;
+    font-size: 50px;
+    position: relative;
+    bottom: -36vh;
+}
+
+#countdownText {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    font-size: 200px;
+    visibility: hidden;
+}
+
+.recordDisplay {
+    width: 415px;
+    height: 164px;
+    position: absolute;
+    top: 130px;
+    left: 6px;
+    visibility: hidden;
+}
+
+#recordTimeHeading {
+    color: #ffffff;
+    text-align: center;
+    font-size: 45px;
+}
+
+#recordTimeDisplay {
+    font-size: 75px;
+    width: 415px;
+    background-color: #202020;
+    color: #ffffff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+.spotifyInfo {
+    width: 415px;
+    height: 150px;
+    position: absolute;
+    bottom: 9px;
+    right: 6px;
+    background-color: #202020;
+    border-radius: 25px;
+}
+
+#trackName {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    left: 110px;
+    width: fit-content;
+    height: 41px;
+    white-space: nowrap;
+}
+
+#trackNameMarquee {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    left: 110px;
+    width: 290px;
+    height: 41px;
+    font-weight: bold;
+    white-space: nowrap;
+    visibility: hidden;
+    box-sizing: border-box;
+    border-left: 5px #202020 solid;
+    border-right: 5px #202020 solid;
+}
+
+.trackNameMarqueeShadow {
+    position: absolute;
+    top: 20px;
+    left: 110px;
+    width: 290px;
+    height: 41px;
+    box-shadow: -20px 0px 6px -6px #202020 inset, 20px 0px 6px -6px #202020 inset;
+    visibility: hidden;
+}
+
+#artistNames {
+    color: #808080;
+    font-size: 20px;
+    position: absolute;
+    top: 62px;
+    left: 110px;
+    width: fit-content;
+    height: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#artistNamesMarquee {
+    color: #808080;
+    font-size: 20px;
+    position: absolute;
+    top: 62px;
+    left: 110px;
+    width: 290px;
+    height: 28px;
+    font-weight: bold;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-left: 3px #202020 solid;
+    border-right: 3px #202020 solid;
+    visibility: hidden;
+}
+
+.artistNamesMarqueeShadow {
+    position: absolute;
+    top: 62px;
+    left: 110px;
+    width: 292px;
+    height: 28px;
+    box-shadow: -20px 0px 6px -6px #202020 inset, 20px 0px 6px -6px #202020 inset;
+    visibility: hidden;
+}
+
+#trackImage {
+    width: 90px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 15px;
+}
+
+.progressBarBackground {
+    position: absolute;
+    bottom: 35px;
+    left: 10px;
+    width: 395px;
+    height: 5px;
+    background-color: #303030;
+    border-radius: 25px;
+}
+
+.progressBar {
+    position: absolute;
+    bottom: 35px;
+    left: 10px;
+    width: 0px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 25px;
+}
+
+#trackProgress {
+    color: #808080;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 15px;
+}
+
+#trackDuration {
+    color: #808080;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 15px;
+    text-align: right;
+}
+
+#splitTable {
+    color: #ffffff;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+}
+
+#splitTable td {
+    height: 30px;
+    font-size: 25px;
+}
+
+.gridSelectScreen {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #000000a0;
+    visibility: visible;
+    color: #ffffff;
+    visibility: visible;
+}
+
+#selectGridTitle {
+    font-size: 100px;
+    text-align: center;
+    padding-top: 280px;
+}
+
+#selectGridButtons {
+    position: absolute;
+    left: 95px;
+    top: 461px;
+}
+
+#selectGridButtons, #selectGridButtons tr, #selectGridButtons td {
+    border: 5px #00000000 solid;
+    border-collapse: collapse;
+}
+
+#selectGridButtons td {
+    width: 150px;
+    height: 150px;
+}
+
+#selectGridButtons button {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: 1px white solid;
+    font-size: 75px;
+    font-family: "Kristen ITC";
+    border-radius: 10px;
+    background-color: #303030;
+    color: #ffffff;
+}
+
+#selectGridButtons button:hover {
+    background-color: #606060;
+}
+
+#selectGridButtons button:active {
+    background-color: #202020;
+}

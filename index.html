@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider game v2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="onPageLoad()">
+    <table id="grid">
+    </table>
+    <p id="timerDisplay">00:00.00</p>
+    <div class="recordDisplay">
+        <p id="recordTimeHeading">current record:</p>
+        <p id="recordTimeDisplay">00:00.00</p>
+    </div>
+    <p id="movesDisplay">0</p>
+    <p id="clockDisplay">00:00:00</p>
+    <p id="dateDisplay">01/01/1970</p>
+    <div class="spotifyInfo">
+        <img id="trackImage">
+        <p id="trackName">Track Name</p>
+        <marquee id="trackNameMarquee" scrollamount="5">Track Name</marquee>
+        <div class="trackNameMarqueeShadow"></div>
+        <p id="artistNames">Artist Name</p>
+        <marquee id="artistNamesMarquee" scrollamount="3.5">Artist Name</marquee>
+        <div class="artistNamesMarqueeShadow"></div>
+        <div class="progressBarBackground"></div>
+        <div class="progressBar"></div>
+        <p id="trackProgress">0:00</p>
+        <p id="trackDuration">0:00</p>
+    </div>
+    <table id="splitTable">
+    </table>
+    <div class="pausedScreen">
+        <p id="pausedText">PAUSED</p>
+        <p id="pausedSubtitle">press esc to resume</p>
+        <p id="countdownText">0</p>
+    </div>
+    <div class="gridSelectScreen">
+        <p id="selectGridTitle">Select grid size:</p>
+        <table id="selectGridButtons">
+        </table>
+    </div>
+    <script src="definitions.js"></script>
+    <script src="generate_puzzle.js"></script>
+    <script src="script.js"></script>
+    <script src="spotify_api.js"></script>
+</body>
+</html>
