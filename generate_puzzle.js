@@ -1,3 +1,8 @@
+// all of the code in this javascript file is used to generate 
+// the placement of the tiles in the starting puzzle.
+
+
+// gets the inversion count of the array
 function getInversionCount(array) {
     var inversionCount = 0;
 
@@ -12,6 +17,7 @@ function getInversionCount(array) {
     return inversionCount;
 };
 
+// gets the position of the blank space
 function getBlankRowPosition(array) {
     var gridSize = Math.sqrt(array.length);
     var blankSpaceIndex = array.indexOf(gridSize ** 2);
@@ -21,12 +27,14 @@ function getBlankRowPosition(array) {
     return positionFromBottom;
 };
 
+// swaps two elements in an array
 function swapElements(array, element1, element2) {
     var tempElement = array[element1];
     array[element1] = array[element2];
     array[element2] = tempElement;
 };
 
+// the main function used to check if the puzzle is possible to solve
 function isSolvable(array) {
     var inversionCount = getInversionCount(array);
     console.log("Inversion Count: " + inversionCount);
@@ -45,10 +53,11 @@ function isSolvable(array) {
     return false;
 };
 
+// generates the puzzle using the methods written above
 function generatePuzzle(gridSize) {
     console.log("Grid Size: " + gridSize);
     var givenPuzzle = [];
-    for (let k = 1; k <= gridSize ** 2; k ++) {
+    for (let k = 1; k <= gridSize ** 2; k++) {
         givenPuzzle.push(k);
     };
     givenPuzzle.sort(() => Math.random() - 0.5);

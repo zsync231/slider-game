@@ -1,3 +1,5 @@
+// constant variable definitions all in one place
+
 const grid = document.getElementById("grid");
 const tiles = grid.getElementsByTagName("td");
 const timerDisplay = document.getElementById("timerDisplay");
