@@ -1,6 +1,10 @@
 var client_id = "293d21a0aea7465d8ce171c5691a37fa";
 var client_secret = "c1010d60281a42c79ec2156ee64812f5";
+<<<<<<< HEAD
 var redirect_uri = "http://127.0.0.1:5500/index.html";
+=======
+var redirect_uri = "https://zsync231.github.io/slider-game/";
+>>>>>>> 4ad6010074d2ddcd925b77dc57a5d61d80b307a4
 var access_token = localStorage.getItem("access_token");
 var refresh_token = localStorage.getItem("refresh_token");
 var currently_playing_data = null;
