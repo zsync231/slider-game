@@ -265,13 +265,14 @@ body {
     height: 5px;
     background-color: #303030;
     border-radius: 25px;
+    overflow: hidden;
 }
 
 .progressBar {
     position: absolute;
-    bottom: 35px;
-    left: 10px;
-    width: 0px;
+    bottom: 0px;
+    left: -395px;
+    width: 395px;
     height: 5px;
     background-color: #ffffff;
     border-radius: 25px;
