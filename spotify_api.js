@@ -192,4 +192,4 @@ function refreshCurrentSongTile() {
 };
 
 refreshCurrentSongTile();
-setInterval(refreshCurrentSongTile, 500);
+setInterval(refreshCurrentSongTile, 1000);
