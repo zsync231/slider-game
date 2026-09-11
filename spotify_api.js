@@ -159,7 +159,7 @@ function handleCurrentlyPlayingResponse() {
             var durationMSSeconds = String(Math.floor(currently_playing_data.item.duration_ms % 60000 / 1000)).padStart(2, "0");
             trackDuration.innerHTML = `${durationMSMinutes}:${durationMSSeconds}`;
             
-            progressBar.style.width = currently_playing_data.progress_ms / currently_playing_data.item.duration_ms * 395 + "px";
+            progressBar.style.left = (395 - (currently_playing_data.progress_ms / currently_playing_data.item.duration_ms * 395)) * -1 + "px";
         } else {
             trackName.innerHTML = "Advertisement";
             trackName.style.visibility = "visible";
@@ -191,4 +191,4 @@ function refreshCurrentSongTile() {
 };
 
 refreshCurrentSongTile();
-setInterval(refreshCurrentSongTile, 500);
+setInterval(refreshCurrentSongTile, 1000);
