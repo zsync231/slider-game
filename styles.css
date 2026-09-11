@@ -195,7 +195,6 @@ body {
     left: 110px;
     width: 290px;
     height: 41px;
-    font-weight: bold;
     white-space: nowrap;
     visibility: hidden;
     box-sizing: border-box;
@@ -233,7 +232,6 @@ body {
     left: 110px;
     width: 290px;
     height: 28px;
-    font-weight: bold;
     white-space: nowrap;
     box-sizing: border-box;
     border-left: 3px #202020 solid;
