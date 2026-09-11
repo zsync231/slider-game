@@ -15,6 +15,7 @@ document.addEventListener("keydown", function (event) {
     };
 });
 
+// requests authorisation from the user to access the api
 function requestAuthorisation() {
     let url = authorise;
     url += "?client_id=" + client_id;
@@ -25,6 +26,7 @@ function requestAuthorisation() {
     window.location.href = url;
 };
 
+// gets the code from the url
 function getCode() {
     let code = null;
     const queryString = window.location.search;
@@ -35,6 +37,7 @@ function getCode() {
     return code;
 };
 
+// handles the page load, checking if the user has already authorised the app and if not, requesting authorisation
 function onPageLoad() {
     client_id = localStorage.getItem("client_id");
     client_secret = localStorage.getItem("client_secret");
@@ -43,6 +46,7 @@ function onPageLoad() {
     };
 };
 
+// refreshes the access token using the refresh token
 function refreshAccessToken() {
     refresh_token = localStorage.getItem("refresh_token");
     let body = "grant_type=refresh_token";
@@ -51,6 +55,7 @@ function refreshAccessToken() {
     callAuthorisationApi(body);
 };
 
+// handles the response from the authorisation api
 function handleAuthorisationResponse() {
     if (this.status == 200) {
         var data = JSON.parse(this.responseText);
@@ -71,6 +76,7 @@ function handleAuthorisationResponse() {
     };
 };
 
+// calls the authorisation api with the given body
 function callAuthorisationApi(body) {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", token, true);
@@ -80,6 +86,7 @@ function callAuthorisationApi(body) {
     xhr.onload = handleAuthorisationResponse;
 };
 
+// fetches the access token using the code from the url
 function fetchAccessToken(code) {
     let body = "grant_type=authorization_code";
     body += "&code=" + code;
@@ -89,12 +96,14 @@ function fetchAccessToken(code) {
     callAuthorisationApi(body);
 };
 
+// handles the redirect from the spotify authorisation page
 function handleRedirect() {
     let code = getCode();
     fetchAccessToken(code);
     window.history.pushState("", "", redirect_uri);
 };
 
+// calls the spotify api with the given method, url, body and callback
 function callApi(method, url, body, callback) {
     let xhr = new XMLHttpRequest();
     if (url == currently_playing) {
@@ -107,6 +116,7 @@ function callApi(method, url, body, callback) {
     xhr.onload = callback;
 };
 
+// handles the response from the currently playing api
 function handleCurrentlyPlayingResponse() {
     console.log(this.status);
     if (this.status == 200) {
@@ -176,6 +186,7 @@ function handleCurrentlyPlayingResponse() {
     };
 };
 
+// refreshes the currently playing song tile
 function refreshCurrentSongTile() {
     callApi("GET", currently_playing, null, handleCurrentlyPlayingResponse);
 };
