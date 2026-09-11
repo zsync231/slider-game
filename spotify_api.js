@@ -160,6 +160,7 @@ function handleCurrentlyPlayingResponse() {
             trackDuration.innerHTML = `${durationMSMinutes}:${durationMSSeconds}`;
             
             progressBar.style.left = (395 - (currently_playing_data.progress_ms / currently_playing_data.item.duration_ms * 395)) * -1 + "px";
+
         } else {
             trackName.innerHTML = "Advertisement";
             trackName.style.visibility = "visible";
