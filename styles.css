@@ -267,14 +267,6 @@ body {
     border-radius: 15px;
 }
 
-#spotifyBackgroundImage {
-    width: 415px;
-    height: 150px;
-    visibility: hidden;
-    filter: blur(25px) brightness(0.5);
-    transition: 1s;
-}
-
 .progressBarBackground {
     position: absolute;
     bottom: 35px;
