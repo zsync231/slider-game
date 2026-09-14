@@ -126,8 +126,6 @@ function handleCurrentlyPlayingResponse() {
             trackName.innerHTML = currently_playing_data.item.name;
             trackNameMarquee.innerHTML = currently_playing_data.item.name;        
             trackImage.src = currently_playing_data.item.album.images[0].url;
-            //spotifyBackgroundImage.src = currently_playing_data.item.album.images[0].url;
-            //spotifyBackgroundImage.style.visibility = "visible";
             
             var artistString = "";
             currently_playing_data.item.artists.forEach(artist => {
