@@ -17,6 +17,7 @@ const artistNames = document.getElementById("artistNames");
 const artistNamesMarquee = document.getElementById("artistNamesMarquee");
 const artistNamesMarqueeShadow = document.querySelector(".artistNamesMarqueeShadow");
 const trackImage = document.getElementById("trackImage");
+const spotifyBackgroundImage = document.getElementById("spotifyBackgroundImage");
 const trackProgress = document.getElementById("trackProgress");
 const trackDuration = document.getElementById("trackDuration");
 const progressBar = document.querySelector(".progressBar");

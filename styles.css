@@ -15,8 +15,8 @@ body {
 }
 
 #grid {
-    width: 1070px;
-    height: 1070px;
+    width: calc(100vh - 10px);
+    height: calc(100vh - 10px);
     position: absolute;
     left: 425px;
     top: 5px;
@@ -26,8 +26,16 @@ body {
 
 #grid td {
     text-align: center;
-    font-size: 120px;
     overflow: hidden;
+    font-size: 120px;
+}
+
+#grid td div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #timerDisplay {
@@ -174,6 +182,7 @@ body {
     right: 6px;
     background-color: #202020;
     border-radius: 25px;
+    overflow: hidden;
 }
 
 #trackName {
@@ -185,6 +194,7 @@ body {
     width: fit-content;
     height: 41px;
     white-space: nowrap;
+    overflow: ellipsis;
 }
 
 #trackNameMarquee {
@@ -198,8 +208,8 @@ body {
     white-space: nowrap;
     visibility: hidden;
     box-sizing: border-box;
-    border-left: 5px #202020 solid;
-    border-right: 5px #202020 solid;
+    border-left: 5px #20202000 solid;
+    border-right: 5px #20202000 solid;
 }
 
 .trackNameMarqueeShadow {
@@ -234,8 +244,8 @@ body {
     height: 28px;
     white-space: nowrap;
     box-sizing: border-box;
-    border-left: 3px #202020 solid;
-    border-right: 3px #202020 solid;
+    border-left: 3px #20202000 solid;
+    border-right: 3px #20202000 solid;
     visibility: hidden;
 }
 
@@ -255,6 +265,14 @@ body {
     top: 10px;
     left: 10px;
     border-radius: 15px;
+}
+
+#spotifyBackgroundImage {
+    width: 415px;
+    height: 150px;
+    visibility: hidden;
+    filter: blur(25px) brightness(0.5);
+    transition: 1s;
 }
 
 .progressBarBackground {
@@ -357,4 +375,16 @@ body {
 
 #selectGridButtons button:active {
     background-color: #202020;
+}
+
+#fontSizeText {
+    position: absolute;
+    top: 100px;
+    width: 415px;
+    left: 6px;
+    background-color: #202020;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 25px;
 }

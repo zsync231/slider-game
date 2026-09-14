@@ -27,7 +27,31 @@ var orderArray = [];
 
 // font sizes defined statically for each grid size,
 // as the font size needs to be smaller for larger grids
-var fontSizes = [120, 120, 120, 108, 90, 80, 56, 50, 44, 40, 40, 38, 34, 32, 30, 28, 26, 24, 24, 22, 22, 20];
+var fontSizes = [
+    120, // 4x4
+    120, // 5x5
+    104, // 6x6
+    90,  // 7x7
+    76,  // 8x8
+    66,  // 9x9
+    50,  // 10x10
+    46,  // 11x11
+    42,  // 12x12
+    38,  // 13x13
+    36,  // 14x14
+    32,  // 15x15
+    30,  // 16x16
+    28,  // 17x17
+    26,  // 18x18
+    24,  // 19x19
+    24,  // 20x20
+    22,  // 21x21
+    20,  // 22x22
+    20,  // 23x23
+    18,  // 24x24
+    18   // 25x25
+];
+
 
 // generates the buttons for the grid size selection screen
 for (let r = 0; r < 2; r++) {
@@ -186,7 +210,7 @@ function generateVisualPuzzle(gridSize) {
         // and makes the blank space invisible
         if (puzzle[t] == gridSize ** 2) {
             tiles[t].style.color = "#00000000";
-            tiles[t].style.backgroundColor = `#000000`;
+            tiles[t].style.backgroundColor = "#000000";
         } else {
             tiles[t].style.backgroundColor = `hsl(${Math.floor(((puzzle[t] - 1) % gridSize) / gridSize * 360)}, 100%, 50%)`;
         };
