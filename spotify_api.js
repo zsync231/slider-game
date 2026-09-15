@@ -116,6 +116,7 @@ function callApi(method, url, body, callback) {
     xhr.onload = callback;
 };
 
+
 // handles the response from the currently playing api
 function handleCurrentlyPlayingResponse() {
     console.log(this.status);
@@ -134,20 +135,27 @@ function handleCurrentlyPlayingResponse() {
             artistNames.innerHTML = artistString.slice(0, -2);
             artistNamesMarquee.innerHTML = artistString.slice(0, -2);
 
-            if (trackName.offsetWidth > 290) {
+            if (trackName.offsetWidth > (spotifyInfo.offsetWidth - 120)) {
                 trackName.style.visibility = "hidden";
                 trackNameMarquee.style.visibility = "visible";
                 trackNameMarqueeShadow.style.visibility = "visible";
+                trackNameMarquee.style.width = (spotifyInfo.offsetWidth - 120) + "px";
+                trackNameMarqueeShadow.style.width = (spotifyInfo.offsetWidth - 120) + "px";
+
+                
             } else {
                 trackName.style.visibility = "visible";
                 trackNameMarquee.style.visibility = "hidden";
                 trackNameMarqueeShadow.style.visibility = "hidden";
             };
 
-            if (artistNames.offsetWidth > 290) {
+            if (artistNames.offsetWidth > (spotifyInfo.offsetWidth - 120)) {
                 artistNames.style.visibility = "hidden";
                 artistNamesMarquee.style.visibility = "visible";
                 artistNamesMarqueeShadow.style.visibility = "visible";
+                artistNamesMarquee.style.width = (spotifyInfo.offsetWidth - 120) + "px";
+                artistNamesMarqueeShadow.style.width = (spotifyInfo.offsetWidth - 120) + "px";
+                
             } else {
                 artistNames.style.visibility = "visible";
                 artistNamesMarquee.style.visibility = "hidden";
@@ -158,7 +166,7 @@ function handleCurrentlyPlayingResponse() {
             var durationMSSeconds = String(Math.floor(currently_playing_data.item.duration_ms % 60000 / 1000)).padStart(2, "0");
             trackDuration.innerHTML = `${durationMSMinutes}:${durationMSSeconds}`;
             
-            progressBar.style.left = (395 - (currently_playing_data.progress_ms / currently_playing_data.item.duration_ms * 395)) * -1 + "px";
+            progressBar.style.left = (progressBar.offsetWidth - (currently_playing_data.progress_ms / currently_playing_data.item.duration_ms * progressBar.offsetWidth)) * -1 + "px";
 
         } else {
             trackName.innerHTML = "Advertisement";

@@ -5,8 +5,6 @@ document.addEventListener("keydown", keyboardActions);
 var gridSize;
 var puzzle;
 var blankSpaceIndex;
-console.log(puzzle);
-console.log(blankSpaceIndex);
 var moves = 0;
 var solved = false;
 var startTime = 0;

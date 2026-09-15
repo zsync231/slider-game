@@ -17,11 +17,11 @@ body {
 #grid {
     width: calc(100vh - 10px);
     height: calc(100vh - 10px);
-    position: absolute;
-    left: 425px;
-    top: 5px;
     table-layout: fixed;
+    margin-top: 5px;
     visibility: hidden;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #grid td {
@@ -40,7 +40,7 @@ body {
 
 #timerDisplay {
     font-size: 75px;
-    width: 415px;
+    width: calc(955px - 50vh);
     height: 84px;
     background-color: #202020;
     color: #00ff00;
@@ -55,7 +55,7 @@ body {
 
 #clockDisplay {
     font-size: 75px;
-    width: 415px;
+    width: calc(955px - 50vh);
     height: 84px;
     background-color: #202020;
     color: #ffffff;
@@ -71,7 +71,7 @@ body {
 
 #dateDisplay {
     font-size: 70px;
-    width: 415px;
+    width: calc(955px - 50vh);
     height: 84px;
     background-color: #202020;
     color: #ffffff;
@@ -98,7 +98,7 @@ body {
 
 #movesDisplay {
     font-size: 75px;
-    width: 415px;
+    width: calc(955px - 50vh);
     height: 84px;
     background-color: #202020;
     color: #ffffff;
@@ -175,7 +175,7 @@ body {
 }
 
 .spotifyInfo {
-    width: 415px;
+    width: calc(955px - 50vh);
     height: 150px;
     position: absolute;
     bottom: 9px;
@@ -253,7 +253,7 @@ body {
     position: absolute;
     top: 62px;
     left: 110px;
-    width: 292px;
+    width: 290px;
     height: 28px;
     box-shadow: -20px 0px 6px -6px #202020 inset, 20px 0px 6px -6px #202020 inset;
     visibility: hidden;
@@ -271,7 +271,7 @@ body {
     position: absolute;
     bottom: 35px;
     left: 10px;
-    width: 395px;
+    width: round(up, calc(0.9515 * (955px - 50vh)), 1px);
     height: 5px;
     background-color: #303030;
     border-radius: 25px;
@@ -281,8 +281,8 @@ body {
 .progressBar {
     position: absolute;
     bottom: 0px;
-    left: -395px;
-    width: 395px;
+    left: round(up, calc(-0.9515 * (955px - 50vh)), 1px);
+    width: round(up, calc(0.9515 * (955px - 50vh)), 1px);
     height: 5px;
     background-color: #ffffff;
     border-radius: 25px;
@@ -321,22 +321,22 @@ body {
     width: 100vw;
     height: 100vh;
     position: absolute;
+    top: 0px;
     background-color: #000000a0;
     visibility: visible;
     color: #ffffff;
-    visibility: visible;
 }
 
 #selectGridTitle {
     font-size: 100px;
     text-align: center;
-    padding-top: 280px;
+    margin-top: 26vh;
 }
 
 #selectGridButtons {
     position: absolute;
     left: 95px;
-    top: 461px;
+    top: 43vh;
 }
 
 #selectGridButtons, #selectGridButtons tr, #selectGridButtons td {
