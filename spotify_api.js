@@ -117,6 +117,18 @@ function callApi(method, url, body, callback) {
 };
 
 
+// adjusts the spotify info tile automatically when the window is resized
+window.addEventListener("resize", function () {
+    trackNameMarquee.style.width = (spotifyInfo.offsetWidth - 120) + "px";
+    trackNameMarqueeShadow.style.width = (spotifyInfo.offsetWidth - 120) + "px";
+
+    artistNamesMarquee.style.width = (spotifyInfo.offsetWidth - 120) + "px";
+    artistNamesMarqueeShadow.style.width = (spotifyInfo.offsetWidth - 120) + "px";
+
+    progressBar.style.left = (progressBar.offsetWidth - (currently_playing_data.progress_ms / currently_playing_data.item.duration_ms * progressBar.offsetWidth)) * -1 + "px";
+});
+
+
 // handles the response from the currently playing api
 function handleCurrentlyPlayingResponse() {
     console.log(this.status);

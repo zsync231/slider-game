@@ -111,10 +111,10 @@ function updateSplits() {
         var newSplit = splitTable.insertRow(-1);
         var newCell = newSplit.insertCell(-1);
         newCell.innerHTML = "Column " + column;
-        newCell.style.width = "230px";
+        newCell.style.width = "50%";
         newCell = newSplit.insertCell(-1);
         newCell.innerHTML = timerDisplay.innerHTML;
-        newCell.style.width = "150px";
+        newCell.style.width = "50%";
         newCell.style.textAlign = "right";
         column++;
         for (let i = 0; i < gridSize; i++) {
@@ -158,20 +158,6 @@ function stopTimer() {
     };
 };
 
-// updates the record time display
-function updateRecordTimeDisplay() {
-    console.log(localStorage.getItem(`${gridSize}x${gridSize} best time`));
-    if (localStorage.getItem(`${gridSize}x${gridSize} best time`) != null) {
-        var recordTime = Number(localStorage.getItem(`${gridSize}x${gridSize} best time`));
-        var minutes = String(Math.floor(recordTime / 6000)).padStart(2, "0");
-        var seconds = String(Math.floor((recordTime % 6000) / 100)).padStart(2, "0");
-        var tenthseconds = String(Math.floor((recordTime % 100))).padStart(2, "0");
-        recordDisplayElements[1].innerHTML = `${minutes}:${seconds}.${tenthseconds}`;
-        recordDisplay.style.visibility = "visible";
-    } else {
-        recordDisplay.style.visibility = "hidden";
-    };
-};
 
 // updates the timer display every tick
 function updateTimer() {
@@ -286,7 +272,6 @@ function keyboardActions(event) {
         if ((event.key == "ArrowUp" || event.key == "ArrowLeft" || event.key == "ArrowDown" || event.key == "ArrowRight") && (!isPaused)) {
             if (!active && !solved) {
                 active = true;
-                recordDisplay.style.visibility = "hidden";
             };
             // up arrow key moves the tile below the blank space up
             if (event.key == "ArrowUp" && getAdjacentCells(blankSpaceIndex).includes(blankSpaceIndex + gridSize) && solved == false) {
@@ -318,7 +303,6 @@ function keyboardActions(event) {
             } else if (isRunning && solved) {
                 // code which runs once the puzzle has been solved
                 stopTimer();
-                updateRecordTimeDisplay();
                 tiles[blankSpaceIndex].innerHTML = blankSpaceIndex + 1;
                 tiles[blankSpaceIndex].style.color = "#000000";
                 tiles[blankSpaceIndex].style.backgroundColor = `hsl(${Math.floor((gridSize - 1) / gridSize * 360)}, 100%, 50%)`;
@@ -342,12 +326,10 @@ function keyboardActions(event) {
                     localStorage.setItem(`${gridSize}x${gridSize} best time`, elapsedTime);
                     localStorage.setItem(`${gridSize}x${gridSize} record set`, `${date}/${month}/${year} ${hour}:${minute}`);
                     timerDisplay.style.color = "#00b7ff";
-                    recordDisplayElements[0].innerHTML = "previous record:";
 
                     // if it is not the first time and the time is worse than the previous record
                 } else {
                     timerDisplay.style.color = "#808080";
-                    recordDisplayElements[0].innerHTML = "current record:";
                 };
 
                 // if splits are enabled, add final row
